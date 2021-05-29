@@ -1,0 +1,320 @@
+CLOUD COMPUTING - 
+
+Module 1 - INTRO TO GCP 
+=============================
+Agenda - 
+1. GCP resource hierarchy
+2. IAM
+3. Cloud Identity
+4. Interacting with GCP
+
+What is Cloud Computing?
+
+1. On-demand Self Service - No human intervention needed to get resources
+2. Broad network access	  - Access from anywhere
+3. Resource pooling	  - Provider shares resources to customers
+4. Rapid elasticity	  - Get more resources quickly as needed
+5. Measured service	  - Pay only for what you consume
+
+
+GCP computing architectures meet you where you are - 
+
+Towards managed infrastructure < ------------------------------------------- > Towards dynamic infrastructure
+
+Iaas 			Hybrid			Paas		Serverless Logic 	Automated elastic resources
+(Compute Engine)	(Kubernetes Engine)	(App Engine)	(Cloud Functions)	(Managed Services)
+
+
+Google Offeres customer-friendly pricing 
+
+1. Billing in sub-hour increments - For compute, data processing and other services
+2. Discounts for sustained use - Automatically applied to virtual machine use over 25% of a month
+3. Discounts for committed use - Pay less for steady, long-term workloads
+4. Discounts for preemptible use - Pay less for interruptible workloads
+5. Custom VM instance types - Pay ony for the resources you need for your application
+
+Security is designed into Google's Technical Infrastructure - 
+Layers ::>
+1. Operational Security
+2. Internet Communication
+3. Storage Services
+4. User Identity
+5. Service Deployment
+6. Hardware infrastructure
+
+GCP offers services for getting value from data - 
+
+1. Compute 		- Compute Engine, Kubernetes Engine, App Engine, Cloud Functions
+2. Storage 		- Bigtable, Cloud Storage, Cloud SQL, Cloud Spanner, Cloud Datastore
+3. Big Data 		- Big Query, Pub/Sub, Data Flow, Data Proc, Data Lab
+4. Machine Learning 	- Natural Language API, Vision API, Machine Learning, Speech API, Translate API
+
+Resource Hieararchy levels define trust boundaries - 
+
+* Group your resources according to your organization structure.
+* Levels of the hierarchy provide trust boundaries and resource isolation.
+
+All GCP services associated with a project 
+1. Track resource and quota usage.
+2. Enable Billing
+3. Manage permissions and credentials
+4. Enable services and APIs
+
+Folders offer flexible management - 
+
+* Folders group projects under an organization
+* Folders can contain projects, other folders, or both.
+* Use folders to assign policies.
+
+An example IAM resource hierarchy - 
+
+* A policy is a set on a resource. 
+	- Each policy contains a set of roles and role members.
+* Resources inherit policies from parent
+	- Resource policies are a union of parent and resource
+* A less restrictive parent policy overrides a more restrictive resource policy.
+
+Google Cloud Identity and Access Management Defines - WHO, CAN DO WHAT, ON WHICH RESOURCE
+
+Three types of IAM Roles - Primitive, Predefines, Custom
+
+To manage your GCP administrative users - 
+1. Gmail accounts and google groups
+2. Users and groups in your G Suite Domain
+3. Users and groups in your Cloud Identity Domain
+
+There are four ways to interact with GCP - 
+
+1. Cloud Platform Console 	- Web User Interface
+2. Cloud Shell and Cloud SDK 	- Command-line Interface(CLI)
+3. Cloud Console Mobile App 	- For IOS and Android
+4. REST-based API 		- For Custom applications
+
+
+Module 2 - VM's & Overview of Storage
+=========================================
+Agenda - 
+1. Virtual Private Cloud(VPC) Network
+2. Compute Engine
+3. Important VPC Capabilities
+
+Google Cloud VPC networks are global, subnets are regional
+
+Compute Engine offers managed virtual machines - 
+1. High CPU, high memory, standard and shared-core machine types
+2. Persistent disks
+3. Standard, SSD, local SSD
+4. Snapshots
+5. Resize disks with no downtime
+6. Instance metadata and startup scripts
+
+
+Module 3 - Storage in the Cloud 
+====================================
+Agenda 
+- Cloud Storage
+- Cloud Bigtable
+- Cloud SQL and Cloud Spanner
+- Cloud Datastore
+- Comparing storage options
+
+Storages in the cloud - 
+1. Cloud Storage
+2. Cloud SQL
+3. Cloud Spanner
+4. Cloud Datastore
+5. Cloud Bigtable
+
+Evolution of SQL --> SQL -> NoSQL -> NeuSQL
+Here; in Cloud SQL -> We have SQL whereas, in Cloud Spanner -> NeuSQL and in Cloud Bigtable -> NoSQL
+
+
+Cloud Storage is binary large-object storage 
+* High performance, internet-scale - Simple administration
+* Does not require capacity management
+* Data encryption at rest
+* Data encryption in transit by default from Google to endpoint
+* Online and offline import services are available
+
+
+Cloud Storage files are organized into buckets - 
+
+	Bucket Attributes			Bucket Contents
+
+1. Globally unique name 			Files(in a flat namespace)
+2. Storage Class
+3. Location(region or multi-region)
+4. IAM policies or Access Control Lists		Access Control Lists
+5. Object Versioning setting
+6. Object Lifecycle managment rules
+
+There are several ways to bring data into Cloud Storage - 
+
+Online transfer - Self-managed copies using command-line tools or drag-and-drop
+Storage Transfer Service - Scheduled, managed batch transfers
+Transfer Appliance - Rackable appliances to securly ship your data
+
+
+Cloud Storage works with other GCP Services - 
+1. Big Query - Import and Export tables
+2. App Engine - Object storage, logs, and Datastore backups
+3. Compute Engine - Startup scripts, images, and general object storage
+4. Cloud SQL - Import and Export tables
+
+Cloud storage is a simple distributed file system, Whereas
+
+Cloud Bigtable is managed NoSQL
+- Fully managed NoSQL. Wide-column database service for terabyte applications
+- Integrated
+	* Accessed using HBase API
+	* Native compatibility with big data, Hadoop ecosystems
+
+Why we choose Cloud Bigtable?
+- Replicated storage
+- Data encryption in-flight and at rest
+- Role-based ACLs (Access Control Lists)
+- Drives major applications such as Google Analytics and Gmail
+
+Bigtable Access Patterns - 
+1. Application API
+2. Streaming
+3. Batch Processing
+
+
+Cloud SQL and Cloud Spanner -
+
+Cloud SQL is a managed RDBMS - 
+1. Offers MySQL and PostgreSQL databases as a service
+2. Automatic replication
+3. Managed Backups
+4. Vertical Scaling (read and write)
+5. Horizontal Scaling (read)
+6. Google Security
+
+Cloud Spanner is a horizontally scalable RDBMS - 
+It supports - 
+1. Automatic Replication
+2. Strong global Consistency
+3. Managed instances with high availability
+4. SQL (ANSI 2011 with extensions)
+
+SQL Properties - ACID = Atomicity, Consistency, Isolation, Durability to be transactional
+
+Cloud Datastore - It is a horizontally scalable NoSQL DB
+- It is designed for application backends
+- Fully managed
+	* Uses a distributed architecture to automatically manage scaling
+- Built-in redundancy
+- Supports ACID transactions
+
+Benefits - 
+1. Schemaless access - No need to think about underlying data structure
+2. Local development tools
+3. Includes a free daily quota
+4. Access from anywhere through a RESTful interface
+
+
+Comparing storage options: technical details 
+
+		Cloud 		Cloud 		Cloud		Cloud		Cloud		Big
+		datastore	bigtable	storage		SQL 		Spanner		Query
+
+Type 		NoSQL		NoSQL		Blobstore	Relational	Relational	Relational
+		document	wide column			SQL for OLTP	SQL for OLTP	SQL for OLAP
+Transactions	Yes 		Single-row 	No		Yes		Yes		No
+Complex Queries	No 		No		No		Yes 		Yes 		Yes
+Capacity	TB+		PB+		PB+		~10TB		PB		PB+
+Unit size 	1 MB/entity	~10 MB/cell	5 TB	    Determined by DB 	10.24 MB/row	10MB/row 
+
+
+Module 4 - Applications in the Cloud 
+=======================================
+Agenda
+1. Google App Engine
+2. Google App Engine Standard Environment
+3. Goodle App Engine Flexible Environment
+4. Google Cloud Endpoints and Apigee Edge
+
+App Engine is a PaaS for building scalable applications 
+- App Engine makes deployment, maintainance, and scalability easy so you can focus on innovation
+- Especially suited for building scalable web applications and mobile backends.
+
+App Engine Standard Environment 
+1. Easily deploy your applications
+2. Autoscale Workloads to meet demand
+3. Economical
+	- Free daily quota
+	- Usage based pricing
+4. SDKs for development, testing and deployment
+
+Requirements - 
+1. Specific versions of Java, Python, PHP and GO are supported
+2. Your applications must conform to sandbox constraints - 
+	* No writing to local file system
+	* All requests time out at 60 seconds
+	* Third-Party software installations are limited
+
+App Engine Flexible Environment - 
+1. Build and Deploy containerized apps with a click
+2. No sandbox constraints
+3. Can access App Engine resources
+4. Standard runtimes: Python, Java, Go, Node.js
+5. Custome runtime support: Any language that supports HTTP requests
+6. Package your runtime as a Dockerfile
+
+Module 5 - Developing, Deploying, and monitoring in the cloud 
+==================================================================
+Agenda 
+1. Development in the cloud
+2. Deployment: Infrastructure as code
+3. Monitoring: Proactive Instrumentation 
+
+Cloud Source Repositories  - Github
+1. Fully featured Git repositories hosted on GCP
+2. Supports collaborative development of cloud apps
+3. Includes integration with stackdriver debugger
+
+Cloud Functions 
+1. Create single-purpose functions that respond to events without a server or runtime
+ - Event examples ::> New instance created, file added to Cloud Storage
+2. Written in Javascript, execute in managed Node.js environment on GCP
+
+Deployment Manager 
+1. Infrastructure management service
+2. Create a .yaml template describing your environment and use Deployment manager to create resources
+3. Provides repeatable deployments
+
+Stack driver can be used for 
+- Monitoring
+- Logging 
+- Debugging 
+- Error reporting 
+- Tracing 
+- Profiler
+
+Module 6 - Handson Lab --> Baseline Infrastructure 
+=====================================================
+We can practice in this link - https://bit.ly/2SEAaUm 
+
+Enter it and search for Baseline Infrastructure and start doing hands on overthere
+
+
+Module 7 - Containers in the Cloud 
+=========================================
+Agenda
+- Introduction to containers
+- Kubernetes and Kubernetes Engine
+
+
+Review: Iaas and Paas
+
+	Compute Engine 			Kubernetes Engine 		App Engine 
+Iaas  <----------------------	--------------------	--------------------	----------> Paas
+	Servers, networking, storage 			Preset run-times, managed services
+	________________________________________________________________________________________
+
+	Pay for what you allocate 			Pay for what you use
+
+
+Container we can create using this command --> kubectl run nginx --image=nginx:1.15.7
+kubernetes to load the data we use command ---> kubectl expose deployments nginx --port=80 --type=LoadBalancer

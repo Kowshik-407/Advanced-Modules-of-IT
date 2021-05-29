@@ -1,0 +1,152 @@
+Machine Learning - Crash Course By Google 
+
+Machine Learning Glossary - https://developers.google.com/machine-learning/glossary
+
+Important Rules - 
+1. Don't be afraid to launch a product without machine learning
+2. Make metric design and implementation a priority
+3. Choose machine learning over a complex heuristic
+4. Keep the first model simple and get the infrastructure right
+5. Detect problems before experting models
+6. Don't overthink which objective you choose to directly optimize first
+7. Choose a simple, observable, and attributable metric for your first objective
+8. Log features at serving time
+9. Don't waste time on new features if unaligned objectives have become the issue
+10. Launch decisions are a proxy for long-term goals
+
+Guiding Principle -> The key to building a great machine learning system is to be a great engineer.
+Fundamental law of machine learning - 
+
+	input							   output
+(System) + (C++ Code) 		= Compile 			-> Machine Code
+(Historical_Data) + (Objective) = Machine Learning System 	-> Policy
+
+Gathering Date ---> Learning ---> Applying the model
+
+
+Module 1 - Framing 
+=====================
+
+What is (Supervised) Machine Learning?
+ML Systems learn how to combine input to produce useful predictions on never-before-seen data
+
+Terminology - 
+Labels - It is the variable we're predicting --> Typically represented by the variable y
+The label could be the future price of wheat, the kind of animal shown in a picture.
+
+Features - These are input variables describing our data --> Typically represented by the variables {x1,x2,----,xn}
+A simple machine learning project might use a single feature 
+In the spam detector example, the features could include the following - 
+1. Words in the email text
+2. Sender's address
+3. Time of day the email was sent
+4. Email contains the phrase "one weird trick"
+
+
+Example - It is a particular instance of data, x
+We out x in boldface to indicate that it is a vector.
+Example has divided into 2 categories - 
+1. Labeled Example has {features, label}: {x,y} --> Used to train the model
+
+Use labeled examples to train the model. In our spam detector example, the labeled examples would be individual emails that users have explicitly marked as "spam" or "not spam."
+
+2. Unlabeled Example has {features, ?}: {x,?} --> Used for making predictions on new data
+
+Whereas in Unlabeled example. We cannot predict whether the mail should move to spam or inbox folder.
+
+Model - It maps examples to predicted labels: 'y' --> Defined by internal parameters, which are learned/
+
+Ex::> A spam detection model might associate certain features strongly with "spam". Two phrases of a model
+
+Training - It means creating or learning the model. That is, you show the model labeled examples and enable the model to gradually learn the relationships between features and label.
+
+Inference - It means applying the trained model to unlabeled examples. That is, you use the trained model to make useful predictions (y'). For example, during inference, you can predict medianHouseValue for new unlabeled examples.
+
+Regression vs. Classification --->
+
+A regression model predicts continous values. For ex, regression models make predictions that answer questions like the foll
+
+What is the value of a house in California?
+What is the probability that a user will click on this ad?
+
+A classification model predicts discrete values. For ex, classification models make predictions that answer questions like the foll
+
+Is a given email message spam or not spam?
+Is this an image of a dog, a cat, or a hamster?
+
+Questions - 
+
+1. Suppose you want to develop a supervised machine learning model to predict whether a given email is "spam" or "not spam." Which of the following statements are true?
+
+Ans ::> The labels applied to some examples might be unreliable.
+
+Explaination -
+Definitely. It's important to check how reliable your data is. The labels for this dataset probably come from email users who mark particular email messages as spam. Since most users do not mark every suspicious email message as spam, we may have trouble knowing whether an email is spam. Furthermore, spammers could intentionally poison our model by providing faulty labels.
+
+2. Suppose an online shoe store wants to create a supervised ML model that will provide personalized shoe recommendations to users. That is, the model will recommend certain pairs of shoes to Marty and different pairs of shoes to Janet. The system will use past user behavior data to generate training data. Which of the following statements are true?
+
+Ans::> "Shoe size" is a useful feature.
+
+Explaination -
+"Shoe size" is a quantifiable signal that likely has a strong impact on whether the user will like the recommended shoes. For example, if Marty wears size 9, the model shouldn't recommend size 7 shoes.
+
+
+Module 2 - Descending into ML
+===============================
+
+Linear Regression - 
+A linear relationship ---> y=mx+b
+
+By the convention in machine learning, the equation --> y' = b + w1x1
+y' = Predicted label (desired output)
+b  = bias (the y-intercept). Sometimes referred as Wo
+w1 = weight of feature1. It means slope as m
+x1 = feature (known input)
+
+A model with seperate weight(w1,w2,--). We can say that as y'=b + w1x1 + w2x2 + w3x3
+
+bias - An intercept or offset from an origin
+weight - A coefficient for a feature in a linear model, or an edge in a deep network
+
+Training and Loss - 
+
+Training a model simply means learning (determining) good values for all the weights and the bias from labeled examples. 
+
+In supervised learning, a machine learning algorithm builds a model by examining many examples and attempting to find a model that minimizes loss; this process is called empirical risk minimization.
+
+Loss is the penalty for a bad prediction. That is, loss is a number indicating how bad the model's prediction was on a single example. If the model's prediction is perfect, the loss is zero; otherwise, the loss is greater.
+
+A high loss model on the left and a low loss model on the right. Note the following about the figure: (img)
+> The arrows represent loss.
+> The blue lines represent predictions.
+
+Squared loss : a popular loss function
+The linear regression models we'll examine here use of loss function called squared loss (also known as L2 loss).
+
+Squared loss = The square of the difference between the label and the prediction
+	     = (observation - prediction(x)) ** 2
+	     = (y - y') ** 2
+
+Mean Square error (MSE) --> Average squared loss per example over the whole dataset.
+		---> MSE = (1/N)*(sum[y-prediction(x)]**2) , (x,y) forall D
+
+1. (x,y) is an example which 
+- x is the set of features (chirps/min, age, gender) that the model uses to make predictions
+- y is the example's label (temperature)
+2. prediction(x) is a function of the weights and bias in combination with the set of features x
+3. D is a dataset containing many labeled examples, which are (x,y) pairs.
+4. N is the number of examples in D
+
+Although MSE is commonly-used in machine learning, it is neither the only practical loss function nor the best loss function for all circumstances.
+
+Question - 
+
+(img)
+1. Which of the two data sets shown in the preceding plots has the higher Mean Squared Error (MSE)?
+
+Ans ::> The dataset on the right.
+
+Explaination - 
+The eight examples on the line incur a total loss of 0. However, although only two points lay off the line, both of those points are twice as far off the line as the outlier points in the left figure. Squared loss amplifies those differences, so an offset of two incurs a loss four times as great as an offset of one.
+
+MSE = (0^2+0^2+0^2+2^2+0^2+0^2+0^2+2^2+0^2+0^2)/10 = 0.8

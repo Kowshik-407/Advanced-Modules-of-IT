@@ -1,0 +1,70 @@
+Artificial Intelligence Foundations 
+ --> Acquire AI fundamental skills and begin your AI journey
+
+			45 Hours of theory and hands-on activities
+
+Excercises exploring - 
+	Pandas 		Python 		Numpy		SQL		Anaconda
+
+32 Hands on labs
+2  Excercises
+10 Videos
+9  Hours of handson
+23 Knowledge checks
+NASSCOM Approved Certification
+
+
+Program Outline - 
+
+Course 1 - Introduction to AI
+1. Evolution and Definition of AI
+2. Early AI Technology
+3. AI Pioneers
+4. AI Timeline and Famous Applications
+5. Current AI Techand Trend-setters
+6. Difference Between Narrow, General and Super AI
+7. Opportunities in AI Across Industries
+8. Principles of Machine Learning
+
+Course 2 - Database Concepts
+1.Introduction to Database Concepts
+2. Introduction to Relational Databases
+3. SQL Relational Database Models
+4. Types of SQL Relationships
+5. Data Types and Data Formats
+6. NoSQL Databases
+7. Using Python for Data Acquisition and Analysis
+
+
+Course 3 - AI Programming Fundamentals: Python
+1. Introduction to AI Programming with Python
+2. Data Types in Python
+3. Fundamental Data Structures
+4. Basic Python Programming for AI- String, Data Structures, Operations, Loops, Branch, Numpy and Pandas
+5. Understand and Define Sorting and Searching Algorithms
+6. Geometric and Graphing Algorithms
+
+Course 4 - AI Statistics-Python
+1. Basic Statistic Concepts
+2. AI Statistics-Python Introduction
+3. Getting Started with Cognos
+4. Descriptive Statistics
+5. Correlation of data
+6. Basic Statistical Analysis Tools
+7. Visualizing data with Plotly
+
+Course 5 - Data Visualization with Python 
+1. Fundamentals of Data Visualizations 
+2. Identify Popular Visualization Dashboards
+3. Define Specialized Visualization Tools
+4. Creating Maps and Visualizing Geospatial Data
+5. Introduction to Building Charts-Pie Charts, Line charts, Bar charts, Column charts, Ring charts, Map charts.
+
+Learning Outcomes - 
+1. Learn different forms of graphs.
+2. Experience Python as an AI tool.
+3. Understand how AI impacts business.
+4. Create data visualizations with Python.
+5. Learn AI trends and career opportunities.
+6. Learn the fundamentals of SQL and data structures.
+7. Understand the impact statistics has on AI research.
